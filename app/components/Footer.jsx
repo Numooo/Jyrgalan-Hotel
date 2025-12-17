@@ -18,10 +18,10 @@ export function Footer() {
                     {/* About */}
                     <div>
                         <h3 className="text-2xl mb-4 text-[#eddfd4]" style={{ fontFamily: 'Playfair Display, serif' }}>
-                            Grand Hotel
+                            Jyrgalan Valley
                         </h3>
                         <p className="text-[#d6ccc2] mb-4" style={{ fontFamily: 'Signika, sans-serif' }}>
-                            Роскошь и комфорт в самом сердце города. Мы создаем незабываемые впечатления с 1995 года.
+                            Experience authentic Kyrgyz hospitality in pristine alpine landscapes. Stay in our unique lodges and explore nature's wonders.
                         </p>
                         <div className="flex space-x-4">
                             <a
@@ -51,7 +51,7 @@ export function Footer() {
                     {/* Quick Links */}
                     <div>
                         <h4 className="mb-4 text-[#eddfd4]" style={{ fontFamily: 'Playfair Display, serif' }}>
-                            Быстрые ссылки
+                            Quick Links
                         </h4>
                         <ul className="space-y-2" style={{ fontFamily: 'Signika, sans-serif' }}>
                             <li>
@@ -59,7 +59,7 @@ export function Footer() {
                                     onClick={() => scrollToSection('#hero')}
                                     className="text-[#d6ccc2] hover:text-[#eddfd4] transition-colors duration-300"
                                 >
-                                    Главная
+                                    Home
                                 </button>
                             </li>
                             <li>
@@ -67,7 +67,7 @@ export function Footer() {
                                     onClick={() => scrollToSection('#about')}
                                     className="text-[#d6ccc2] hover:text-[#eddfd4] transition-colors duration-300"
                                 >
-                                    О нас
+                                    About Jyrgalan
                                 </button>
                             </li>
                             <li>
@@ -75,7 +75,7 @@ export function Footer() {
                                     onClick={() => scrollToSection('#services')}
                                     className="text-[#d6ccc2] hover:text-[#eddfd4] transition-colors duration-300"
                                 >
-                                    Услуги
+                                    Experiences
                                 </button>
                             </li>
                             <li>
@@ -83,7 +83,7 @@ export function Footer() {
                                     onClick={() => scrollToSection('#rooms')}
                                     className="text-[#d6ccc2] hover:text-[#eddfd4] transition-colors duration-300"
                                 >
-                                    Комнаты
+                                    Our Lodges
                                 </button>
                             </li>
                         </ul>
@@ -92,30 +92,30 @@ export function Footer() {
                     {/* Services */}
                     <div>
                         <h4 className="mb-4 text-[#eddfd4]" style={{ fontFamily: 'Playfair Display, serif' }}>
-                            Услуги
+                            Our Lodges
                         </h4>
                         <ul className="space-y-2 text-[#d6ccc2]" style={{ fontFamily: 'Signika, sans-serif' }}>
-                            <li>Бесплатный Wi-Fi</li>
-                            <li>Ресторан и бар</li>
-                            <li>Фитнес-центр и спа</li>
-                            <li>Конференц-залы</li>
-                            <li>Трансфер из аэропорта</li>
+                            <li>Darya Hostel</li>
+                            <li>Beymaral Lodge</li>
+                            <li>Peak Lodge</li>
+                            <li>Peak Restaurant</li>
+                            <li>Hot Tub & Spa</li>
                         </ul>
                     </div>
 
                     {/* Contact */}
                     <div>
                         <h4 className="mb-4 text-[#eddfd4]" style={{ fontFamily: 'Playfair Display, serif' }}>
-                            Контакты
+                            Contact
                         </h4>
                         <ul className="space-y-3" style={{ fontFamily: 'Signika, sans-serif' }}>
                             <li className="flex items-start text-[#d6ccc2]">
                                 <Mail className="w-5 h-5 mr-3 mt-1 flex-shrink-0" />
-                                <span>info@grandhotel.ru</span>
+                                <span>info@jyrgalan.com</span>
                             </li>
                             <li className="flex items-start text-[#d6ccc2]">
                                 <Phone className="w-5 h-5 mr-3 mt-1 flex-shrink-0" />
-                                <span>+7 (495) 123-45-67</span>
+                                <span>+996 XXX XXX XXX</span>
                             </li>
                         </ul>
                     </div>
@@ -124,7 +124,7 @@ export function Footer() {
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-[#76765c] text-center">
                     <p className="text-[#d6ccc2]" style={{ fontFamily: 'Signika, sans-serif' }}>
-                        © {currentYear} Grand Hotel. Все права защищены.
+                        © {currentYear} Jyrgalan Valley Lodges. All rights reserved.
                     </p>
                 </div>
             </div>
