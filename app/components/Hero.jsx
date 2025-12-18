@@ -1,5 +1,6 @@
 "use client"
-import { motion } from 'framer-motion';
+import birds from "@/public/img/Bird Flock.json";
+import Lottie from "lottie-react";
 
 export function Hero() {
     const scrollToContact = () => {
@@ -11,98 +12,34 @@ export function Hero() {
 
     return (
         <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
+            <div
+                style={{
+                    position: 'absolute',
+                    top: '0',
+                    left: '0',
+                    width: '690px',
+                    height: '690px',
+                    pointerEvents: 'none',
+                    zIndex: 10,
+                }}
+            >
+                <Lottie
+                    animationData={birds}
+                    loop
+                    style={{ width: '100%', height: '50%' }}
+                />
+            </div>
+
             <div className="absolute inset-0">
                 <img
-                    src="https://images.unsplash.com/photo-1662454456003-f6cae5b7b516?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxreXJneXpzdGFuJTIwbW91bnRhaW5zJTIwdmFsbGV5fGVufDF8fHx8MTc2NTc4NTkyN3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                    src="https://images.unsplash.com/photo-1662454456003-f6cae5b7b516?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
                     alt="Jyrgalan Valley"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover scale-x-[-1]"
                 />
                 <div className="absolute inset-0 bg-[#060504] opacity-50"></div>
             </div>
 
-            {/* Animated Eagle */}
-            <motion.div
-                className="left-1/2 top-1/7 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none relative w-32 h-32 md:w-40 md:h-40"
-                initial={{ x: '150vw', y: '-200px' }}
-                animate={{
-                    x: ['150vw', '0px', '0px', '0px', '150vw'],
-                    y: ['-200px', '-200px', '-200px', '-200px', '-200px']
-                }}
-                transition={{
-                    duration: 8,
-                    times: [0, 0.25, 0.5, 0.75, 1],
-                    repeat: Infinity,
-                    repeatDelay: 3,
-                    ease: 'easeInOut',
-                }}
-            >
-                {/* Flying Eagle - Coming */}
-                <motion.div
-                    className="absolute inset-0 z-10"
-                    animate={{
-                        opacity: [1, 1, 0, 0, 0],
-                        scaleX: [1, 1, 1, 1, 1]
-                    }}
-                    transition={{
-                        duration: 8,
-                        times: [0, 0.24, 0.25, 0.75, 1],
-                        repeat: Infinity,
-                        repeatDelay: 3,
-                        ease: 'easeInOut',
-                    }}
-                >
-                    <img
-                        src="https://png.pngtree.com/png-vector/20250506/ourmid/pngtree-a-majestic-bald-eagle-soaring-with-outstretched-wings-showcasing-its-white-png-image_16174496.png"
-                        alt="Flying Eagle"
-                        className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-2xl"
-                    />
-                </motion.div>
-
-                {/* Sitting Eagle */}
-                <motion.div
-                    className="absolute inset-0 z-20"
-                    animate={{
-                        opacity: [0, 0, 1, 1, 0]
-                    }}
-                    transition={{
-                        duration: 8,
-                        times: [0, 0.24, 0.25, 0.74, 0.75],
-                        repeat: Infinity,
-                        repeatDelay: 3,
-                        ease: 'easeInOut',
-                    }}
-                >
-                    <img
-                        src="https://png.pngtree.com/png-vector/20241110/ourmid/pngtree-the-eagle-is-sitting-png-image_14387081.png"
-                        alt="Sitting Eagle"
-                        className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-2xl"
-                    />
-                </motion.div>
-
-                {/* Flying Eagle - Leaving (Mirrored) */}
-                <motion.div
-                    className="absolute inset-0 z-10"
-                    animate={{
-                        opacity: [0, 0, 0, 0, 1],
-                        scaleX: [-1, -1, -1, -1, -1]
-                    }}
-                    transition={{
-                        duration: 8,
-                        times: [0, 0.24, 0.5, 0.74, 0.75],
-                        repeat: Infinity,
-                        repeatDelay: 3,
-                        ease: 'easeInOut',
-                    }}
-                >
-                    <img
-                        src="https://png.pngtree.com/png-vector/20250506/ourmid/pngtree-a-majestic-bald-eagle-soaring-with-outstretched-wings-showcasing-its-white-png-image_16174496.png"
-                        alt="Flying Eagle Leaving"
-                        className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-2xl"
-                    />
-                </motion.div>
-            </motion.div>
-
-            <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
                 <h1 className="text-5xl md:text-7xl mb-6 text-[#eddfd4]" style={{ fontFamily: 'Playfair Display, serif' }}>
                     Welcome to Jyrgalan Valley
                 </h1>
