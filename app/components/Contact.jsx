@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from 'react';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Globe } from 'lucide-react';
 
 export function Contact() {
     const [formData, setFormData] = useState({
@@ -16,7 +16,7 @@ export function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert('Thank you for your inquiry! We will contact you soon.');
+        console.log(formData);
         setFormData({
             name: '',
             email: '',
@@ -37,14 +37,14 @@ export function Contact() {
 
     const contactInfo = [
         {
-            icon: MapPin,
+            icon: Globe,
             title: 'Location',
             content: 'The Kyrgyz Republic, v. Jyrgalan'
         },
         {
-            icon: Clock,
-            title: 'Response Time',
-            content: 'Within 24 hours'
+            icon: MapPin,
+            title: 'Address',
+            content: 'Achakeeva Str. house 6'
         },
         {
             icon: Phone,
@@ -54,7 +54,7 @@ export function Contact() {
         {
             icon: Mail,
             title: 'Email',
-            content: 'info@jyrgalan.com'
+            content: 'info@letshearth.com'
         }
     ];
 
