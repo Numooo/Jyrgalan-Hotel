@@ -13,7 +13,6 @@ export function Hero() {
             id="hero"
             className="relative h-screen w-full overflow-hidden flex items-center justify-center"
         >
-            {/* LOTTIE BACKGROUND */}
             <div className="absolute inset-0 -z-10 pointer-events-none">
                 <Lottie
                     animationData={bgbirds}
@@ -25,11 +24,7 @@ export function Hero() {
                     }}
                 />
             </div>
-
-            {/* DARK OVERLAY */}
             <div className="absolute inset-0 bg-[#060504]/60 -z-10" />
-
-            {/* CONTENT */}
             <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
                 <h1
                     className="text-5xl md:text-7xl mb-6 text-[#eddfd4]"

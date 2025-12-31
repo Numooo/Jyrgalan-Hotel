@@ -6,42 +6,42 @@ const testimonials = [
         country: "Italy",
         rating: 5,
         text: `Located in Jyrgalan village, this place offers a peaceful atmosphere with cold nights and homemade warm food. Supportive staff enhance the experience, while nearby hiking spots like Kok-Bell waterfall and a lake provide beautiful views.`,
-        avatar: "/avatars/enrica.jpg",
+        avatar: "/img/Без названия.jpg",
     },
     {
         name: "Aranzazu",
         country: "Spain",
         rating: 5,
         text: `Comfortable double room, and very nice common areas too. Everything was clean and well kept. Owners were very friendly. Food was so tasty.`,
-        avatar: "/avatars/aranzazu.jpg",
+        avatar: "/img/Без названия.jpg",
     },
     {
         name: "Scott",
         country: "Netherlands",
         rating: 5,
         text: `Warm, magnanimous hospitality. Delicious food. Sublime scenery. A place to disconnect from the modern world and find the Kyrgyz soul. Highly recommend.`,
-        avatar: "/avatars/scott.jpg",
+        avatar: "/img/Без названия.jpg",
     },
     {
         name: "Victoria",
         country: "United Kingdom",
         rating: 5,
         text: `Large and comfortable room, decent wifi, excellent multi course home cooked meals`,
-        avatar: "/avatars/victoria.jpg",
+        avatar: "/img/Без названия.jpg",
     },
 ];
 
 export default function Testimonials() {
     return (
-        <section className="w-full bg-[#f6f3ee]">
+        <section className=" bg-[#f6f3ee]">
             {/* Header */}
-            <div className="grid grid-cols-1 md:grid-cols-2">
+            <div className="grid container mx-auto grid-cols-1 md:grid-cols-2">
                 <div className="relative h-[260px] md:h-[320px]">
-                    <Image
-                        src="/images/group.jpg"
+                    <h3 className={'py-1.5 px-5'} style={{ fontFamily: "Playfair Display, serif" }}>Company Profile Presentation 2025</h3>
+                    <img
+                        src="https://kappa.lol/k23UwD"
                         alt="Guests"
-                        fill
-                        className="object-cover"
+                        className="object-cover w-full"
                     />
                 </div>
 
