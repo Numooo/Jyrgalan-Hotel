@@ -1,0 +1,1 @@
+export const api = "https://jyrgalan-valley-hotels.com/api/v1";

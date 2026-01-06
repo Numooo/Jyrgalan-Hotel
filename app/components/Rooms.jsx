@@ -1,106 +1,17 @@
 "use client"
 
-import { Bed, Users, Wifi, Bath, Home, UtensilsCrossed } from 'lucide-react';
+import { Wifi, Bath, Home, UtensilsCrossed } from 'lucide-react';
 import LodgeSlider from "@/app/components/LodgeSlider";
+import { useGetHotels, useHotels } from "@/stores/hotelStore";
+import { useEffect } from "react";
 
 export function Rooms() {
-    const lodges = [
-        {
-            title: 'Darya Hostel',
-            subtitle: 'Cozy & Well-Designed',
-            price: 'from $15',
-            images: [
-                {
-                    title: 'Dining table',
-                    url: '/img/Jyrgalan_Valley_Presentation_2.pdf-image-017.jpg',
-                },
-                {
-                    title: 'Relaxing area',
-                    url: '/img/Jyrgalan_Valley_Presentation_2.pdf-image-018.jpg',
-                },
-                {
-                    title: 'Darak (tree) room',
-                    url: '/img/Jyrgalan_Valley_Presentation_2.pdf-image-019.jpg',
-                },
-                {
-                    title: 'Jer (soil) room',
-                    url: '/img/Jyrgalan_Valley_Presentation_2.pdf-image-020.jpg',
-                },
-                {
-                    title: 'Suu (water) room',
-                    url: '/img/Jyrgalan_Valley_Presentation_2.pdf-image-021.jpg',
-                }
-            ],
-            features: [
-                '3 shared rooms (Darak, Jer, Suu)',
-                '4 beds per room',
-                'Accommodates 12 people',
-                'Shared bathroom & kitchen',
-                'Terrace with mountain views',
-                'Free Wi-Fi'
-            ],
-            highlights: 'A cozy and well-designed accommodation in Jyrgalan village. Possible to rent the hostel entirely.'
-        },
-        {
-            title: 'Beymaral Lodge',
-            subtitle: 'Traditional with Modern Touch',
-            price: 'from $40',
-            images: [
-                {
-                    url: '/img/Jyrgalan_Valley_Presentation_2.pdf-image-022.jpg',
-                },
-                {
-                    url: '/img/Jyrgalan_Valley_Presentation_2.pdf-image-023.jpg',
-                },
-                {
-                    url: '/img/Jyrgalan_Valley_Presentation_2.pdf-image-024.jpg',
-                },
-                {
-                    url: '/img/Jyrgalan_Valley_Presentation_2.pdf-image-025.jpg',
-                }
-            ],
-            features: [
-                '4 comfortable rooms',
-                '3 double rooms + 1 family room',
-                'Accommodates 9 people',
-                'Private bathrooms with amenities',
-                'Garden with hot tub/pool',
-                'Cozy living & dining rooms'
-            ],
-            highlights: 'Traditional-style hotel with modern amenities. Features hot tub, garden, and relaxation area after hiking or skiing. Can be rented entirely with kitchen access.'
-        },
-        {
-            title: 'Peak Lodge',
-            subtitle: 'Panoramic Mountain Views',
-            price: 'from $50',
-            images: [
-                {
-                    url: '/img/Jyrgalan_Valley_Presentation_2.pdf-image-026.jpg',
-                },
-                {
-                    url: '/img/Jyrgalan_Valley_Presentation_2.pdf-image-027.jpg',
-                },
-                {
-                    url: '/img/Jyrgalan_Valley_Presentation_2.pdf-image-028.jpg',
-                },
-                {
-                    url: '/img/Jyrgalan_Valley_Presentation_2.pdf-image-030.jpg',
-                },
-                {
-                    url: '/img/Jyrgalan_Valley_Presentation_2.pdf-image-031.jpg',
-                }
-            ],
-            features: [
-                '3 twin cottages',
-                'Private bathrooms',
-                'Full amenities package',
-                'Mini-fridge & kettle',
-                'Peak Restaurant on-site',
-                'Bar with drinks & Italian wine'
-            ],
-            highlights: 'Twin-room cottages with panoramic views. Enjoy evenings in the cozy restaurant offering local and international cuisine, Italian wine, and various beverages.'
-        }
-    ];
+    const getHotels = useGetHotels();
+    const hotels = useHotels();
+
+    useEffect(() => {
+        void getHotels();
+    }, [getHotels])
 
     const scrollToContact = () => {
         const element = document.querySelector('#contact');
@@ -122,7 +33,7 @@ export function Rooms() {
                 </div>
 
                 <div className="space-y-12">
-                    {lodges.map((lodge, index) => (
+                    {hotels.map((lodge, index) => (
                         <div
                             key={index}
                             className={`bg-[#feffff] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 ${

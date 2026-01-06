@@ -1,40 +1,18 @@
-import Image from "next/image";
+"use client"
 
-const testimonials = [
-    {
-        name: "Enrica",
-        country: "Italy",
-        rating: 5,
-        text: `Located in Jyrgalan village, this place offers a peaceful atmosphere with cold nights and homemade warm food. Supportive staff enhance the experience, while nearby hiking spots like Kok-Bell waterfall and a lake provide beautiful views.`,
-        avatar: "/img/Без названия.jpg",
-    },
-    {
-        name: "Aranzazu",
-        country: "Spain",
-        rating: 5,
-        text: `Comfortable double room, and very nice common areas too. Everything was clean and well kept. Owners were very friendly. Food was so tasty.`,
-        avatar: "/img/Без названия.jpg",
-    },
-    {
-        name: "Scott",
-        country: "Netherlands",
-        rating: 5,
-        text: `Warm, magnanimous hospitality. Delicious food. Sublime scenery. A place to disconnect from the modern world and find the Kyrgyz soul. Highly recommend.`,
-        avatar: "/img/Без названия.jpg",
-    },
-    {
-        name: "Victoria",
-        country: "United Kingdom",
-        rating: 5,
-        text: `Large and comfortable room, decent wifi, excellent multi course home cooked meals`,
-        avatar: "/img/Без названия.jpg",
-    },
-];
+import { useGetTestimonials, useTestimonials } from "@/stores/testimonialStore";
+import { useEffect } from "react";
 
 export default function Testimonials() {
+    const getTestimonials = useGetTestimonials();
+    const testimonials = useTestimonials();
+
+    useEffect(() => {
+        void getTestimonials();
+    }, [getTestimonials])
+
     return (
         <section className=" bg-[#f6f3ee]">
-            {/* Header */}
             <div className="grid container mx-auto grid-cols-1 md:grid-cols-2">
                 <div className="relative h-[260px] md:h-[320px]">
                     <h3 className={'py-1.5 px-5'} style={{ fontFamily: "Playfair Display, serif" }}>Company Profile Presentation 2025</h3>
@@ -54,19 +32,16 @@ export default function Testimonials() {
                     </h2>
                 </div>
             </div>
-
-            {/* Cards */}
             <div className="max-w-7xl mx-auto px-6 py-16">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {testimonials.map((t, i) => (
+                    {testimonials.map((t) => (
                         <div
-                            key={i}
+                            key={t.id}
                             className="bg-[#e7e1d8] text-center px-6 pt-14 pb-10 relative"
                         >
-                            {/* Avatar */}
                             <div className="absolute -top-10 left-1/2 -translate-x-1/2">
                                 <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-[#f6f3ee]">
-                                    <Image
+                                    <img
                                         src={t.avatar}
                                         alt={t.name}
                                         width={80}
@@ -80,8 +55,6 @@ export default function Testimonials() {
                             <p className="uppercase text-xs tracking-widest text-gray-600 mb-2">
                                 {t.country}
                             </p>
-
-                            {/* Stars */}
                             <div className="flex justify-center gap-1 mb-4">
                                 {Array.from({ length: t.rating }).map((_, idx) => (
                                     <span key={idx} className="text-black text-sm">
