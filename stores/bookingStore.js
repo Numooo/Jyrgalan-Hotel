@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import axios from "axios";
+import { api, apiKey } from "./api";
 
 export const useBookingStore = create((set) => ({
     bookings: [],
@@ -31,7 +32,11 @@ export const useBookingStore = create((set) => ({
         set({ loadingBooking: true });
 
         const { data } = await axios
-            .post(`${api}/bookings`, booking)
+            .post(`${api}/booking-requests`, booking, {
+                    headers: {
+                      "X-API-KEY": `${apiKey}`,
+                    },
+                  })
             .finally(() => set({ loadingBooking: false }));
 
         set((state) => ({

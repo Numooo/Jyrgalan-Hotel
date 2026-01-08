@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import axios from "axios";
+import { api, apiKey } from "./api";
 
 export const useContactStore = create((set) => ({
     contacts: [],
@@ -10,7 +11,11 @@ export const useContactStore = create((set) => ({
         set({ loadingContact: true });
 
         const { data } = await axios
-            .get(`${api}/contacts`)
+            .get(`${api}/contacts`, {
+        headers: {
+          "X-API-KEY": `${apiKey}`,
+        },
+      })
             .finally(() => set({ loadingContact: false }));
         set({ contacts: data });
         return data;
